@@ -14,4 +14,3 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(productsRouter);
 export default app;
-
