@@ -12,5 +12,6 @@ app.use(express.json());
 //actúa como middleware al procesar los datos enviados desde el cliente al servidor a través de formularios HTML o solicitudes POST.
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
-app.use('/',productsRouter);
+app.use(productsRouter);
 export default app;
+
