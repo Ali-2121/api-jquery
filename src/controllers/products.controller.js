@@ -28,7 +28,7 @@ import productDAO from "../dao/products.dao.js";
     console.log(req.body)
     productDAO.insertOne(req.body)
     .then(result=> 
-        res.redirect('/api/products/'))
+        res.redirect('/'))
     .catch(err=> res.json({ status:"Product not saved"}))
  }
 
