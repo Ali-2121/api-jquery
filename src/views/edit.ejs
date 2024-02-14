@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div data-role="page" id="update">
+        <div data-role="header">
+            <h1>Abarrotes la China</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Inicio</a></li>
+                    <li><a href="#" data-icon="grid" class="ui-btn-active">Products</a></li>
+                    <li><a href="#" data-icon="user">Empleados</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+        <div data-role="content">
+            <form action="/api/products/<%= result.barcode%>" method="POST">
+                <input type="text" name="nombre" id="txt_name" placeholder="Nombre del producto" value="<%= result.nombre %>">
+                
+                <input type="text" name="barcode" id="txt_barcode" placeholder="Codigo de barras" value="<%= result.barcode %>">
+            
+                <input type="text" name="brand" id="txt_brand" placeholder="Marca" value="<%= result.brand %>">
+            
+                <input type="number" name="price" id="txt_price" placeholder="Precio de venta" value="<%= result.price %>">
+                
+                <input type="number" name="cost" id="txt_cost" placeholder="Precio de compra" value="<%= result.cost %>">
+                
+                <input type="number" name="stock" id="txt_stock" placeholder="Existencias" value="<%= result.stock %>">
+                
+                <input type="date" name="expiredDate" data-inline="true" id="txt_expiredDate"  value="<%= result.expiredDate %>">
+
+                <label for="flip-6">Activo</label>
+                <select name="status" id="flip-6" data-role="slider" data-mini="true">
+                    <%=console.log(result.status)%>
+                    <option value="0" <%=result.status==0?"selected":"" %>>Off</option>
+                    <option value="1" <%=result.status==1?"selected":"" %>>On</option>
+                </select>
+
+                <button type="submit" class="ui-shadow ui-btn ui-corner-all ui-mini">Actualizar</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h5>Hecho con una 💻 y con ❤ por Alina Bonilla</h5>
+        </div>
+    </div>
+</body>
+</html>
