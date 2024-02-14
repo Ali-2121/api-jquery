@@ -37,7 +37,7 @@ import productDAO from "../dao/products.dao.js";
         .then(result => {
             !result ? res.json({
                 message:"Product not found"
-            }) : res.redirect('/api/products/')
+            }) : res.redirect('/')
         })
         .catch(err=> res.status(500).json({ error: err }))
  }
@@ -46,7 +46,7 @@ import productDAO from "../dao/products.dao.js";
         .then(result => {
             !result ? res.json({
                 message:"Product not found"
-            }) : res.redirect('/api/products/')
+            }) : res.redirect('/')
         })
         .catch(err=> res.json({ status:"Product not deleted"}))
  }
